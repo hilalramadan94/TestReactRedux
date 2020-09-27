@@ -4,6 +4,16 @@ import React, { Component } from "react";
 import { Col, FormGroup, Row, Input, Label, Button } from "reactstrap";
 import productValidation from "../validations/productValidation";
 
+const mapStateToProps = (state) => {
+  return {
+    initialValues: {
+      name: state.products.getProductDetail.name,
+      price: state.products.getProductDetail.price,
+    },
+  };
+};
+//NOTE : Wajib initialValues
+
 const renderField = ({
   input,
   type,
@@ -79,4 +89,4 @@ FormComponent = reduxForm({
   enableReinitialize: true, //Form Bisa Digunakan di Create dan Edit
 })(FormComponent);
 
-export default connect()(FormComponent);
+export default connect(mapStateToProps, null)(FormComponent);

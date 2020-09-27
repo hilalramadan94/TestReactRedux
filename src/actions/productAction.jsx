@@ -3,6 +3,8 @@ import axios from "axios";
 export const GET_PRODUCTS_LIST = "GET_PRODUCTS_LIST";
 export const GET_PRODUCT_DETAIL = "GET_PRODUCT_DETAIL";
 export const POST_PRODUCT_CREATE = "POST_PRODUCT_CREATE";
+export const PUT_PRODUCT_EDIT = "PUT_PRODUCT_EDIT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
 
 //Action Product List
 export const getProductList = () => {
@@ -80,12 +82,61 @@ export const postProductCreate = (data) => {
       })
       .catch(function (error) {
         dispatch({
-          type: GET_PRODUCT_DETAIL,
+          type: POST_PRODUCT_CREATE,
           payload: {
             data: false,
             errorMessage: error.message,
           },
         });
+      });
+  };
+};
+
+//Action Product Edit
+export const putProductEdit = (data, id) => {
+  return (dispatch) => {
+    axios
+      .put(
+        "http://my-json-server.typicode.com/hilalramadan94/testdb/products/" +
+          id,
+        data
+      )
+      .then(function (response) {
+        console.log(response);
+
+        dispatch({
+          type: PUT_PRODUCT_EDIT,
+          payload: {
+            data: response.data,
+            errorMessage: false,
+          },
+        });
+      })
+      .catch(function (error) {
+        dispatch({
+          type: PUT_PRODUCT_EDIT,
+          payload: {
+            data: false,
+            errorMessage: error.message,
+          },
+        });
+      });
+  };
+};
+
+//Action Product Delete
+export const deleteProduct = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(
+        "http://my-json-server.typicode.com/hilalramadan94/testdb/products/" +
+          id
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
       });
   };
 };

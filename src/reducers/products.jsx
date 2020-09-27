@@ -2,15 +2,23 @@ import {
   GET_PRODUCTS_LIST,
   GET_PRODUCT_DETAIL,
   POST_PRODUCT_CREATE,
+  PUT_PRODUCT_EDIT,
+  DELETE_PRODUCT,
 } from "../actions/productAction";
 
 let initialState = {
+  //Product List
   getProductsList: false,
   errorProductsList: false,
+  //Product Detail
   getProductDetail: false,
   errorProductDetail: false,
+  //Product Data
   getResponseDataProduct: false,
   errorResponseDataProduct: false,
+  //Product Delete
+  getResponseDeleteProduct: false,
+  errorResponseDeleteProduct: false,
 };
 
 const products = (state = initialState, action) => {
@@ -34,6 +42,20 @@ const products = (state = initialState, action) => {
         ...state,
         getResponseDataProduct: action.payload.data,
         errorResponseDataProduct: action.payload.errorMessage,
+      };
+
+    case PUT_PRODUCT_EDIT:
+      return {
+        ...state,
+        getResponseDataProduct: action.payload.data,
+        errorResponseDataProduct: action.payload.errorMessage,
+      };
+
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        getResponseDeleteProduct: action.payload.data,
+        errorResponseDeleteProduct: action.payload.errorMessage,
       };
 
     default:
