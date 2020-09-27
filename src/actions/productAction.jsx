@@ -68,6 +68,8 @@ export const postProductCreate = (data) => {
         data
       )
       .then(function (response) {
+        console.log(response);
+
         dispatch({
           type: POST_PRODUCT_CREATE,
           payload: {
