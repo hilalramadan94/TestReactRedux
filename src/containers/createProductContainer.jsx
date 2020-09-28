@@ -31,6 +31,8 @@ class CreateProductContainer extends Component {
             this.props.getResponseDataProduct.price,
           "success"
         );
+        //Redirect
+        this.props.history.push("/");
       } else {
         swal("Failed!", this.props.errorResponseDataProduct, "error");
       }

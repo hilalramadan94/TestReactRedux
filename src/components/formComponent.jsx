@@ -7,12 +7,13 @@ import productValidation from "../validations/productValidation";
 const mapStateToProps = (state) => {
   return {
     initialValues: {
+      id: state.products.getProductDetail.id,
       name: state.products.getProductDetail.name,
       price: state.products.getProductDetail.price,
     },
   };
 };
-//NOTE : Wajib initialValues
+//NOTE : Wajib initialValues, digunakan untuk edit
 
 const renderField = ({
   input,
@@ -50,6 +51,14 @@ class FormComponent extends Component {
       <form onSubmit={this.props.handleSubmit}>
         <FormGroup row>
           <Col md={4}>
+            <FormGroup>
+              <Field
+                type="text"
+                name="id"
+                component={renderField}
+                label="Id :"
+              />
+            </FormGroup>
             <FormGroup>
               <Field
                 type="text"

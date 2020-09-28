@@ -10,7 +10,7 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const getProductList = () => {
   return (dispatch) => {
     axios
-      .get("http://my-json-server.typicode.com/hilalramadan94/testdb/products")
+      .get("https://test-b93f8.firebaseio.com/products.json")
       .then(function (response) {
         dispatch({
           type: GET_PRODUCTS_LIST,
@@ -36,10 +36,7 @@ export const getProductList = () => {
 export const getProductDetail = (id) => {
   return (dispatch) => {
     axios
-      .get(
-        "http://my-json-server.typicode.com/hilalramadan94/testdb/products/" +
-          id
-      )
+      .get("https://test-b93f8.firebaseio.com/products/" + id + ".json")
       .then(function (response) {
         dispatch({
           type: GET_PRODUCT_DETAIL,
@@ -63,10 +60,11 @@ export const getProductDetail = (id) => {
 
 //Action Product Create
 export const postProductCreate = (data) => {
+  console.log(data);
   return (dispatch) => {
     axios
-      .post(
-        "http://my-json-server.typicode.com/hilalramadan94/testdb/products",
+      .put(
+        "https://test-b93f8.firebaseio.com/products/" + data.id + "/.json",
         data
       )
       .then(function (response) {
@@ -96,11 +94,7 @@ export const postProductCreate = (data) => {
 export const putProductEdit = (data, id) => {
   return (dispatch) => {
     axios
-      .put(
-        "http://my-json-server.typicode.com/hilalramadan94/testdb/products/" +
-          id,
-        data
-      )
+      .put("https://test-b93f8.firebaseio.com/products/" + id + ".json", data)
       .then(function (response) {
         console.log(response);
 
@@ -128,10 +122,7 @@ export const putProductEdit = (data, id) => {
 export const deleteProduct = (id) => {
   return (dispatch) => {
     axios
-      .delete(
-        "http://my-json-server.typicode.com/hilalramadan94/testdb/products/" +
-          id
-      )
+      .delete("https://test-b93f8.firebaseio.com/products/" + id + ".json")
       .then(function (response) {
         console.log(response);
       })
@@ -142,3 +133,4 @@ export const deleteProduct = (id) => {
 };
 //https://api.mocki.io/v1/c3371e1e
 //http://my-json-server.typicode.com/hilalramadan94/testdb/products
+//https://test-b93f8.firebaseio.com/product
