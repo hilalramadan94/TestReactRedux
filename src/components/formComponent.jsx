@@ -57,6 +57,9 @@ class FormComponent extends Component {
                 name="id"
                 component={renderField}
                 label="Id :"
+                disabled={
+                  this.props.initialValues.id === undefined ? false : true
+                }
               />
             </FormGroup>
             <FormGroup>

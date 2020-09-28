@@ -30,9 +30,9 @@ class CreateProductContainer extends Component {
             "\r\nPrice : " +
             this.props.getResponseDataProduct.price,
           "success"
-        );
-        //Redirect
-        this.props.history.push("/");
+        ).then(function () {
+          window.location = "/";
+        });
       } else {
         swal("Failed!", this.props.errorResponseDataProduct, "error");
       }

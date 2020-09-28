@@ -36,7 +36,9 @@ class EditProductContainer extends Component {
             "\r\nPrice : " +
             this.props.getResponseDataProduct.price,
           "success"
-        );
+        ).then(function () {
+          window.location = "/";
+        });
       } else {
         swal("Failed!", this.props.errorResponseDataProduct, "error");
       }
