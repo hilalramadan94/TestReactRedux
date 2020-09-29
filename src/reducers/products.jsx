@@ -62,5 +62,7 @@ const products = (state = initialState, action) => {
       return state;
   }
 };
+//NOTE : ...state -> dicopy dari initialState, semua false
+//       kemudian dibawahnya hasil dari response API nya
 
 export default products;

@@ -23,6 +23,7 @@ class EditProductContainer extends Component {
     this.props.dispatch(putProductEdit(data, this.props.match.params.id));
   }
 
+  //render
   render() {
     if (
       this.props.errorResponseDataProduct ||
