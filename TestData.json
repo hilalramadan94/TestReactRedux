@@ -1,0 +1,35 @@
+{
+  "products" : [ {
+    "id" : "0",
+    "name" : "Sariwangi",
+    "price" : "2000"
+  }, {
+    "id" : "1",
+    "name" : "Indomie Ayam Bawang",
+    "price" : "2500"
+  }, {
+    "id" : "2",
+    "name" : "Indomie Goreng",
+    "price" : "2700"
+  }, {
+    "id" : "3",
+    "name" : "Pop Ice",
+    "price" : "1000"
+  }, {
+    "id" : "4",
+    "name" : "Kopi Kapal Api",
+    "price" : "5000"
+  }, {
+    "id" : "5",
+    "name" : "Kopi ABC Susu",
+    "price" : "1000"
+  }, {
+    "id" : "6",
+    "name" : "Antangin",
+    "price" : "2500"
+  }, {
+    "id" : "7",
+    "name" : "Energen",
+    "price" : "50"
+  } ]
+}
